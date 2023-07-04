@@ -112,7 +112,7 @@ function startQuiz() {
   // console.log(playerName);
   if (!playerName) {
     // playerName = 'Anonymous';
-    // alert("Please enter your name to proceed");
+    alert("Please enter your name to proceed");
   }else {
   startButton.addEventListener('click', startQuiz);
   descriptionContainer.style.display = 'none';
