@@ -109,10 +109,10 @@ function startQuiz() {
   resultContainer.style.display = 'none';
 
   playerName = playerNamee.value;
-  console.log(playerName);
+  // console.log(playerName);
   if (!playerName) {
     // playerName = 'Anonymous';
-    alert("Please enter your name to proceed");
+    // alert("Please enter your name to proceed");
   }else {
   startButton.addEventListener('click', startQuiz);
   descriptionContainer.style.display = 'none';
@@ -141,7 +141,7 @@ function loadQuestion() {
     input.name = 'choice';
     input.value = i;
     li.appendChild(input);
-    li.appendChild(document.createTextNode(choice));
+    li.appendChild(document.createTextNode(choice));//Creates a text string from the specified value.
     choicesElement.appendChild(li);
   }
 
@@ -151,16 +151,20 @@ function loadQuestion() {
 // Check if the selected answer is correct
 function checkAnswer() {
   const selectedOption = document.querySelector('input[name="choice"]:checked');
+  // console.log(selectedOption);
   if (!selectedOption) {
     return;
   }
 
   const answer = parseInt(selectedOption.value);
+  // console.log(answer);
   if (answer === quizData[currentQuestion].correctAnswer) {
     
     score++;
     
   }
+
+  
 
   currentQuestion++;
   selectedOption.checked = false;
@@ -209,10 +213,25 @@ function updateLeaderboard() {
 
 // Move to the next question
 function nextQuestion() {
+  const selectedOption = document.querySelector('input[name="choice"]:checked');
+  // console.log(selectedOption,"selectedoption value");
+  const answer = parseInt(selectedOption.value);
+  console.log(answer,"answer" );
+  console.log(quizData[currentQuestion].correctAnswer ,"correct answer");
+  console.log(answer ==quizData[currentQuestion].correctAnswer);
+  // console.log(score,"score");
+  if (answer == quizData[currentQuestion].correctAnswer) {
+    // console.log("add one to score");
+    
+    score++;
+    // console.log(score,"score");
+  }
+  // checkAnswer();
   currentQuestion++;
   if (currentQuestion < quizData.length) {
     loadQuestion();
   } else {
+    localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
     showResult();
   }
 }
