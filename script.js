@@ -159,6 +159,7 @@ function checkAnswer() {
   if (answer === quizData[currentQuestion].correctAnswer) {
     
     score++;
+    
   }
 
   currentQuestion++;
