@@ -1,11 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quize Gamege</title>
+  <title>Quiz App</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+  <h1>Quiz App</h1>
+  <div id="quiz-container">
+    <h2 id="question"></h2>
+    <ul id="choices"></ul>
+    <button id="submit-btn">Submit</button>
+  </div>
+  <div id="result-container">
+    <h2 id="result"></h2>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz App</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Quiz App</h1>
+  <div id="description-container">
+    <p id="description">Welcome to the Quiz App! This game will test your knowledge with 10 multiple-choice questions. Choose the correct answer for each question and see your score at the end. Good luck!</p>
+    <input type="text" id="playerName" placeholder="Your Name">
+    <button id="start-btn">Start Game</button>
+  </div>
+  <div id="quiz-container">
+    <h2 id="question"></h2>
+    <ul id="choices"></ul>
+    <div id="question-count"></div>
+    <button id="next-btn" style="display: none;">Next Question</button>
     
+
+  </div>
+  <div id="result-container" style="display: none;">
+    <h2 id="result"></h2>
+  </div>
+  <div id="leaderboard-container">
+    <h2>Leaderboard</h2>
+    <table id="leaderboard">
+      <tr>
+        <th>Player</th>
+        <th>Score</th>
+      </tr>
+    </table>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
+
