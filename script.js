@@ -184,7 +184,8 @@ function showResult() {
   leaderboard.splice(5); // Keep only the top 5 scores
   updateLeaderboard();
 
-  // Save leaderboard to local storage
+  // Save leaderboard to local storage 
+  //Converts a JavaScript value to a JavaScript Object Notation (JSON) string.
   localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
 }
 
